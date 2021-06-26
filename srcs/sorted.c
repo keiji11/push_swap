@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sorted.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 19:14:30 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/26 18:20:01 by keiji-pop        ###   ########.fr       */
+/*   Created: 2021/06/26 18:21:42 by keiji-pop         #+#    #+#             */
+/*   Updated: 2021/06/26 18:21:55 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isneg(char c)
+int	sorted(t_frame *frame)
 {
-	if (c == "-")
-		return (-1);
-	else
+	t_stack		*tmp;
+
+	if (!frame->a || frame->b)
 		return (0);
-}
-
-void	ft_goto_pushswap_error(int len, t_frame *frame)
-{
-	if (len > 10)
-		push_swap_error(frame);
-	else
-		return ;
-}
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	unsigned int	x;
-
-	x = 0;
-	while (s1[x] && s2[x] && s1[x] == s2[x])
-		x++;
-	return (((unsigned char *)s1)[x] - ((unsigned char *)s2)[x]);
+	tmp = frame->a;
+	while (tmp->next != frame->a)
+	{
+		if (tmp->num > tmp->next->num)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

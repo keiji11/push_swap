@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llucente <llucente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:11:37 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/21 19:21:34 by llucente         ###   ########.fr       */
+/*   Updated: 2021/06/26 18:20:18 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 ** circular doubly-linked list
 */
 
-typedef struct		s_stack
+typedef struct s_stack
 {
 	long int		num;
 	struct s_stack	*next;
@@ -44,7 +44,7 @@ typedef struct		s_stack
 ** typedef for stacks a + b
 */
 
-typedef struct		s_frame
+typedef struct s_frame
 {
 	struct s_stack	*a;
 	struct s_stack	*b;
@@ -128,10 +128,12 @@ void				fill_stack_a(t_frame *frame);
 void				push_swap_error(t_frame *frame);
 void				push_swap_free(t_frame *frame);
 void				stack_add_end(t_frame *frame, char stack_name, int num);
+void				no_stack_add_end(t_stack **top, t_frame *frame, int num);
 void				stack_del_top(t_frame *frame, char stack_name);
 void				stack_add_top(t_frame *frame, char stack_name, int num);
 
 int					ft_isneg(char c);
 void				ft_goto_pushswap_error(int len, t_frame *frame);
+int					ft_strcmp(const char *s1, const char *s2);
 
 #endif
