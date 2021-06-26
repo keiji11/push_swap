@@ -6,7 +6,7 @@
 /*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:11:37 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/26 18:20:18 by keiji-pop        ###   ########.fr       */
+/*   Updated: 2021/06/26 18:58:19 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,7 @@ void				stack_add_top(t_frame *frame, char stack_name, int num);
 int					ft_isneg(char c);
 void				ft_goto_pushswap_error(int len, t_frame *frame);
 int					ft_strcmp(const char *s1, const char *s2);
+void				ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch);
+void				ter_flag_rrotate(int flag, t_frame *frame);
 
 #endif
