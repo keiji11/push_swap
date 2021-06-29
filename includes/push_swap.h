@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:11:37 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/26 18:58:19 by keiji-pop        ###   ########.fr       */
+/*   Updated: 2021/06/29 16:44:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,5 +137,14 @@ void				ft_goto_pushswap_error(int len, t_frame *frame);
 int					ft_strcmp(const char *s1, const char *s2);
 void				ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch);
 void				ter_flag_rrotate(int flag, t_frame *frame);
+
+void				if_stack_a_b(int a_flag, int b_flag);
+void				if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, t_stack *stack_a,
+						char *a, char *b);
+void				if_stack_a_b_2(t_frame *frame, int a_flag, int b_flag,
+						t_stack *a, t_stack *b);
+void				not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
+						char *b);
+void				check_stacks(t_frame *frame, t_stack *stack_a, t_stack *stack_b);
 
 #endif
