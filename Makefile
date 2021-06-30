@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: llucente <llucente@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 17:54:22 by llucente          #+#    #+#              #
-#    Updated: 2021/06/21 19:14:53 by llucente         ###   ########.fr        #
+#    Updated: 2021/06/30 12:41:37 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,23 +42,23 @@ S_SRC =			create_frame.c \
 				stack_del_top.c \
 				utils.c
 
-# P_SRC =			find_biggest_smallest.c \
-# 				find_median.c \
-# 				find_moves.c \
-# 				find_stack_len.c \
-# 				insertion_solve_half.c \
-# 				insertion_solve_quarters.c \
-# 				push_median.c \
-# 				push_quarters.c \
-# 				push_swap.c \
-# 				reset_moves.c \
-# 				solve_5_or_less.c \
-# 				solver.c \
-# 				sorted.c
+P_SRC =			find_biggest_smallest.c \
+				find_median.c \
+				find_moves.c \
+				find_stack_len.c \
+				insertion_solve_half.c \
+				insertion_solve_quarters.c \
+				push_median.c \
+				push_quarters.c \
+				push_swap.c \
+				reset_moves.c \
+				solve_5_or_less.c \
+				solver.c \
+				sorted.c
 
-# C_SRC =			checker.c \
-# 				do_launch.c \
-# 				sort_test.c
+C_SRC =			checker.c \
+				do_launch.c \
+				sort_test.c
 
 S_OBJ =			$(S_SRC:%.c=%.o)
 P_OBJ =			$(P_SRC:%.c=%.o)
@@ -73,7 +73,7 @@ P_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(P_OBJ))
 C_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(C_OBJ))
 OBJ_PATH =		$(S_OBJ_PATH) $(P_OBJ_PATH) $(C_OBJ_PATH)
 
-all:			color do_libft $(OBJ_DIR) $(NAME)
+all:			do_libft $(OBJ_DIR) $(NAME)
 				@echo "\\n\033[32;1m PUSH_SWAP AND CHECKER COMPLETE \033[0m \\n"
 
 $(OBJ_DIR):

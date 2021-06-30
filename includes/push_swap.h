@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:11:37 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/29 16:44:56 by marvin           ###   ########.fr       */
+/*   Updated: 2021/06/30 12:58:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <stdint.h>
 
 # define QUARTER frame->quarter
 # define MEDIAN frame->median
