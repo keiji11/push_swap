@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME = libft.a
-HEAD = libft.h
-GNL = get_next_line.h
+HEAD = includes/libft.h
+GNL = includes/get_next_line.h
 
 SRCS = ft_atoi.c \
 		ft_isdigit.c \

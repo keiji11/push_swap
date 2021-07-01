@@ -6,7 +6,7 @@
 #    By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 17:54:22 by llucente          #+#    #+#              #
-#    Updated: 2021/07/01 14:42:02 by keiji-pop        ###   ########.fr        #
+#    Updated: 2021/07/01 14:54:56 by keiji-pop        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CHECKER =		checker
 NAME =			$(PUSH_SWAP) $(CHECKER)
 LIBFT_A =		libftprintf.a
 
-COMP =			gcc -Wall -Werror -Wextra -I includes -I libft/includes -I libft/libft -c -o
+COMP =			gcc -Wall -Werror -Wextra -I includes -I libft/includes -c -o
 
 OBJ_DIR =		obj/
 SRC_DIR =		srcs/
