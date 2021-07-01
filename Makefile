@@ -6,7 +6,7 @@
 #    By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 17:54:22 by llucente          #+#    #+#              #
-#    Updated: 2021/07/01 13:53:29 by keiji-pop        ###   ########.fr        #
+#    Updated: 2021/07/01 14:42:02 by keiji-pop        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ LIBFT =			libft/
 
 S_SRC =			create_frame.c \
 				display_stacks.c \
+				display_stacks_utils.c \
 				do_pa.c \
 				do_pb.c \
 				do_ra.c \

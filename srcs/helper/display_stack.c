@@ -12,40 +12,7 @@
 
 #include "push_swap.h"
 // #include "ft_printf.h"
-// #include "libft.h"
-
-void	if_stack_a_b(int a_flag, int b_flag)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (!stack_a)
-		a_flag = 1;
-	if (!stack_b)
-		b_flag = 1;
-}
-
-void	if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, t_stack *stack_b,
-					char *a, char *b)
-{
-	if (!a_flag)
-		a = ft_itoa(stack_a->num);
-	else
-		a = ft_strdup("");
-	if (!b_flag)
-		b = ft_itoa(stack_b->num);
-	else
-		b = ft_strdup("");
-}
-
-void	if_stack_a_b_2(t_frame *frame, int a_flag, int b_flag,
-						t_stack *stack_a, t_stack *stack_b)
-{
-	if (!stack_a || stack_a == frame->a->prev)
-		a_flag = 1;
-	if (!stack_b || stack_b == frame->b->prev)
-		b_flag = 1;
-}
+#include "libft.h"
 
 void	not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
 			char *b)
@@ -84,9 +51,10 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 	if_stack_a_b(a_flag, b_flag);
 	while (1)
 	{
-		if_flag_a_b(a_flag, b_flag, *stack_a, *stack_a,
-					*a, *b);
-		if_stack_a_b_2(*frame, a_flag, b_flag, *a, *b);
+		if_flag_a(a_flag, stack_a, *a);
+		if_flag_b(b_flag, stack_b, *b);
+		if_stack_a_2(frame, a_flag, a);
+		if_stack_a_2(frame, b_flag, b);
 		not_stack(stack_a, stack_b, a, b);
 		if ((!stack_a && !stack_b))
 			break ;
@@ -102,7 +70,7 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 ** "\E[H\E[2J" is an escape sequence to clear the screen.
 */
 
-void		display_stacks(t_frame *frame)
+void	display_stacks(t_frame *frame)
 {
 	if (frame->print_stacks == 1)
 	{
