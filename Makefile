@@ -6,7 +6,7 @@
 #    By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 17:54:22 by llucente          #+#    #+#              #
-#    Updated: 2021/07/01 14:54:56 by keiji-pop        ###   ########.fr        #
+#    Updated: 2021/07/01 17:01:38 by keiji-pop        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CHECKER =		checker
 NAME =			$(PUSH_SWAP) $(CHECKER)
 LIBFT_A =		libftprintf.a
 
-COMP =			gcc -Wall -Werror -Wextra -I includes -I libft/includes -c -o
+COMP =			gcc -Wall -Werror -Wextra -I includes -I libft -c -o
 
 OBJ_DIR =		obj/
 SRC_DIR =		srcs/
@@ -76,7 +76,7 @@ C_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(C_OBJ))
 OBJ_PATH =		$(S_OBJ_PATH) $(P_OBJ_PATH) $(C_OBJ_PATH)
 
 all:			do_libft $(OBJ_DIR) $(NAME)
-				@echo "\\n\033[32;1m PUSH_SWAP AND CHECKER COMPLETE \033[0m \\n"
+				@echo "PUSH_SWAP AND CHECKER COMPLETE"
 
 $(OBJ_DIR):
 				@mkdir -p $(OBJ_DIR)
@@ -84,9 +84,9 @@ $(OBJ_DIR):
 
 $(NAME):		$(OBJ_PATH)
 				@gcc $(S_OBJ_PATH) $(P_OBJ_PATH) *.a -o push_swap \
-					-I includes -I libft/includes
+					-I includes -I libft
 				@gcc $(S_OBJ_PATH) $(C_OBJ_PATH) *.a -o checker \
-					-I includes -I libft/includes
+					-I includes -I libft
 
 $(S_OBJ_PATH):	$(S_SRC_PATH)
 				@$(MAKE) $(S_OBJ)
@@ -114,12 +114,12 @@ do_libft:
 clean:			
 				@/bin/rm -rf $(OBJ_DIR) $(LIBFT_A)
 				@make -C $(LIBFT) clean
-				@echo "\\n\033[32;1m Cleaned libft object files \033[0m"
+				@echo "Cleaned libft object files"
 
 fclean:			clean
 				@/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT_A)
 				@make -C $(LIBFT) fclean
-				@echo "\\n\033[32;1m Cleaned $(NAME) \033[0m \\n"
+				@echo "Cleaned $(NAME)"
 
 re: 			fclean all
 
