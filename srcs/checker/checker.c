@@ -31,7 +31,7 @@ void	checker(t_frame *frame)
 ** Main creates frame to hold stack A and stack B by calling create_frame.
 */
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_frame		*frame;
 

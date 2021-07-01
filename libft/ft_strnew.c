@@ -22,7 +22,7 @@ char	*ft_strnew(size_t size)
 {
 	char	*new;
 
-	new = (char*)malloc((size + 1) * sizeof(char));
+	new = (char *)malloc((size + 1) * sizeof(char));
 	if (!new)
 		return (NULL);
 	ft_bzero(new, size + 1);

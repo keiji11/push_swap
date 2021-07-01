@@ -18,7 +18,10 @@ void	sort_test(t_frame *frame)
 	int			error;
 
 	stack_a = frame->a;
-	error = (frame->b) ? 1 : 0;
+	if (frame->b)
+		error = 1;
+	else
+		error = 0;
 	while (stack_a && stack_a->next != frame->a)
 	{
 		if (stack_a->num > stack_a->next->num)

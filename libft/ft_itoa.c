@@ -21,7 +21,7 @@
 
 static char	*negative_case(intmax_t num, char *str, int i, int count)
 {
-	uintmax_t neg;
+	uintmax_t	neg;
 
 	str[0] = '-';
 	neg = -num;
@@ -35,7 +35,7 @@ static char	*negative_case(intmax_t num, char *str, int i, int count)
 	return (str);
 }
 
-char		*ft_itoa(intmax_t num)
+char	*ft_itoa(intmax_t num)
 {
 	char		*str;
 	int			count;
@@ -51,12 +51,14 @@ char		*ft_itoa(intmax_t num)
 	if (num < 0)
 		return (negative_case(num, str, i, count));
 	else
+	{
 		while (num > 0)
 		{
 			str[i] = '0' + (num % 10);
 			num = num / 10;
 			i--;
 		}
+	}
 	str[count] = '\0';
 	return (str);
 }

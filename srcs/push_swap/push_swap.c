@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llucente <llucente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:10:16 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/21 18:11:03 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/01 12:53:29 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	push_swap(t_frame *frame)
 ** Main creates frame to hold stack A and stack B by calling create_frame.
 */
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_frame		*frame;
 

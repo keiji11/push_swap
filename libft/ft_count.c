@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+void	negative(uintmax_t neg, intmax_t count)
+{
+	while (neg > 0)
+	{
+		neg /= 10;
+		count++;
+	}
+}
+
 intmax_t	ft_count(intmax_t num)
 {
 	intmax_t	count;
@@ -24,16 +33,11 @@ intmax_t	ft_count(intmax_t num)
 		count++;
 	}
 	if (!count)
-		while (num > 0)
-		{
-			num /= 10;
-			count++;
-		}
+	{
+		negative(neg, count);
+	}
 	else
-		while (neg > 0)
-		{
-			neg /= 10;
-			count++;
-		}
+	{
+	}
 	return (count);
 }

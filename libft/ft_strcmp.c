@@ -14,7 +14,7 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned int x;
+	unsigned int	x;
 
 	x = 0;
 	while (s1[x] && s2[x] && s1[x] == s2[x])

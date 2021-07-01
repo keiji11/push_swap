@@ -20,11 +20,12 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *fresh;
+	char	*fresh;
 
 	if (!s1 || !s2)
 		return (0);
-	if (!(fresh = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	fresh = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!(fresh))
 		return (NULL);
 	if (s1)
 		ft_strcpy(fresh, s1);

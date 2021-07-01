@@ -19,7 +19,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	char	*hay;
 
 	i = 0;
-	hay = (char*)haystack;
+	hay = (char *)haystack;
 	if (!*needle)
 		return (hay);
 	while (hay[i] != '\0')

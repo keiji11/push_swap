@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void		stack_del_top(t_frame *frame, char stack_name)
+#include "push_swap.h"
+
+void	stack_del_top(t_frame *frame, char stack_name)
 {
 	t_stack		**top;
 	t_stack		*tmp;

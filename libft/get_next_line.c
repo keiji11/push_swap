@@ -13,7 +13,7 @@
 #include "get_next_line.h"
 #include "libft.h"
 
-static int		free_gnl(char *buf, int n)
+static int	free_gnl(char *buf, int n)
 {
 	free(buf);
 	return (n);
@@ -37,11 +37,12 @@ static t_list	*get_fd(t_list **save, int fd)
 	return (tmp);
 }
 
-static int		get_one_line(char **line, char *content, char *buf, int ret)
+static int	get_one_line(char **line, char *content, char *buf, int ret)
 {
 	char	*temp_c;
 
-	ret == 0 ? free(buf) : 0;
+	if (ret == 0)
+		free(buf);
 	if (content == NULL)
 		return (0);
 	temp_c = ft_strchr(content, '\n');
@@ -62,7 +63,7 @@ static int		get_one_line(char **line, char *content, char *buf, int ret)
 	return (0);
 }
 
-int				get_next_line(const int fd, char **line)
+int	get_next_line(const int fd, char **line)
 {
 	static t_list	*save;
 	t_list			*temp;

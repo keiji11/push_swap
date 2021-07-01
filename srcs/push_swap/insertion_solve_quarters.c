@@ -31,8 +31,10 @@ static void	rotate_and_push_to_a(t_frame *frame)
 		while (BIG_RROTATE--)
 			do_rrb(frame);
 	do_pa(frame);
-	SMALL_FLAG ? do_ra(frame) : 0;
-	(BIG_FLAG || !frame->b) ? frame->after_rotate++ : 0;
+	if (SMALL_FLAG)
+		do_ra(frame);
+	if (BIG_FLAG || !frame->b)
+		frame->after_rotate++;
 	reset_moves(frame);
 }
 
@@ -64,7 +66,7 @@ static void	push_big_small(t_frame *frame, t_stack *stack, t_stack *stack_end)
 ** Pushes biggest to the top of A
 */
 
-void		insertion_solve_quarters(t_frame *frame)
+void	insertion_solve_quarters(t_frame *frame)
 {
 	int	split;
 
@@ -78,7 +80,7 @@ void		insertion_solve_quarters(t_frame *frame)
 			find_biggest_smallest(frame, 'b');
 			find_moves(frame, 'b');
 			if (frame->b && (SMALL_ROTATE >= 0 || SMALL_RROTATE >= 0
-				|| BIG_ROTATE >= 0 || BIG_RROTATE >= 0))
+					|| BIG_ROTATE >= 0 || BIG_RROTATE >= 0))
 				push_big_small(frame, frame->b, frame->b->prev);
 		}
 		while (--frame->after_rotate)

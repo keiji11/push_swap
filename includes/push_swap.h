@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:11:37 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/30 12:58:44 by marvin           ###   ########.fr       */
+/*   Updated: 2021/07/01 12:45:17 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ void				stack_add_end(t_frame *frame, char stack_name, int num);
 void				no_stack_add_end(t_stack **top, t_frame *frame, int num);
 void				stack_del_top(t_frame *frame, char stack_name);
 void				stack_add_top(t_frame *frame, char stack_name, int num);
+void				next_el_list(t_stack **top, t_stack *tmp, int num);
 
 int					ft_isneg(char c);
 void				ft_goto_pushswap_error(int len, t_frame *frame);
@@ -140,12 +141,13 @@ void				ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch);
 void				ter_flag_rrotate(int flag, t_frame *frame);
 
 void				if_stack_a_b(int a_flag, int b_flag);
-void				if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, t_stack *stack_a,
-						char *a, char *b);
+void				if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, 
+						t_stack *stack_b, char *a, char *b);
 void				if_stack_a_b_2(t_frame *frame, int a_flag, int b_flag,
 						t_stack *a, t_stack *b);
 void				not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
 						char *b);
-void				check_stacks(t_frame *frame, t_stack *stack_a, t_stack *stack_b);
+void				check_stacks(t_frame *frame, t_stack *stack_a, 
+						t_stack *stack_b);
 
 #endif

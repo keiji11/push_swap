@@ -37,7 +37,7 @@ static t_table	do_launch_value(int execute_value)
 	return (table[execute_value]);
 }
 
-void			do_launch(t_frame *frame)
+void	do_launch(t_frame *frame)
 {
 	char			*ptr;
 	int				execute_val;

@@ -18,16 +18,17 @@
 # include <unistd.h>
 # include <stdint.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
-}					t_list;
+}	t_list;
 
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
 intmax_t			ft_count(intmax_t num);
+void				negative(uintmax_t neg, intmax_t count);
 // int					ft_delim_count(char const *s, char delimter);
 // int					ft_isalpha(int c);
 int					ft_isdigit(int c);

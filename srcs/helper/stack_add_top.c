@@ -12,26 +12,36 @@
 
 #include "push_swap.h"
 
-void		stack_add_top(t_frame *frame, char stack_name, int num)
+void	next_el_list(t_stack **top, t_stack *tmp, int num)
+{
+	tmp->next = *top;
+	tmp->prev = (*top)->prev;
+	(*top)->prev = tmp;
+	tmp->prev->next = tmp;
+	tmp->num = num;
+	*top = (*top)->prev;
+}
+
+void	stack_add_top(t_frame *frame, char stack_name, int num)
 {
 	t_stack		**top;
 	t_stack		*tmp;
 
-	top = (stack_name == 'a') ? &frame->a : &frame->b;
+	if (stack_name == 'a')
+		top = &frame->a;
+	else
+		top = &frame->b;
 	if (*top)
 	{
-		if (!(tmp = (t_stack *)malloc(sizeof(t_stack))))
+		tmp = (t_stack *)malloc(sizeof(t_stack));
+		if (!(tmp))
 			push_swap_error(frame);
-		tmp->next = *top;
-		tmp->prev = (*top)->prev;
-		(*top)->prev = tmp;
-		tmp->prev->next = tmp;
-		tmp->num = num;
-		*top = (*top)->prev;
+		next_el_list(top, tmp, num);
 	}
 	else
 	{
-		if (!(*top = (t_stack *)malloc(sizeof(t_stack))))
+		*top = (t_stack *)malloc(sizeof(t_stack));
+		if (!(*top))
 			push_swap_error(frame);
 		(*top)->next = *top;
 		(*top)->prev = *top;

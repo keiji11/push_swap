@@ -25,7 +25,7 @@ void	if_stack_a_b(int a_flag, int b_flag)
 		b_flag = 1;
 }
 
-void	if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, t_stack *stack_a,
+void	if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, t_stack *stack_b,
 					char *a, char *b)
 {
 	if (!a_flag)
@@ -39,7 +39,7 @@ void	if_flag_a_b(int a_flag, int b_flag, t_stack *stack_a, t_stack *stack_a,
 }
 
 void	if_stack_a_b_2(t_frame *frame, int a_flag, int b_flag,
-						t_stack *a, t_stack *b)
+						t_stack *stack_a, t_stack *stack_b)
 {
 	if (!stack_a || stack_a == frame->a->prev)
 		a_flag = 1;
