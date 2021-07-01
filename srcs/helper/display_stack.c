@@ -58,7 +58,11 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 		not_stack(stack_a, stack_b, a, b);
 		if ((!stack_a && !stack_b))
 			break ;
-		ft_printf("%15s | %-15s\n", a, b);
+		write(1, &a, 16);
+		write(1, "\n", 1);
+		write(1, &b, 16);
+		write(1, "\n", 1);
+		// ft_printf("%15s | %-15s\n", a, b);
 		free_strings(a, b);
 		check_stacks(frame, stack_a, stack_b);
 	}
@@ -75,8 +79,10 @@ void	display_stacks(t_frame *frame)
 	if (frame->print_stacks == 1)
 	{
 		usleep(100000);
-		ft_printf("\E[H\E[2J");
-		ft_printf("%15s   %-15s\n", "Stack A", "Stack B");
+		write(1, "Stack A\n", 8);
+		write(1, "Stack B\n", 8);
+		// ft_printf("\E[H\E[2J");
+		// ft_printf("%15s   %-15s\n", "Stack A", "Stack B");
 		display_printf(frame, 0, 0);
 	}
 }

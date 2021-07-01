@@ -6,7 +6,7 @@
 #    By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 17:54:22 by llucente          #+#    #+#              #
-#    Updated: 2021/07/01 17:01:38 by keiji-pop        ###   ########.fr        #
+#    Updated: 2021/07/01 17:13:01 by keiji-pop        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,15 +109,15 @@ $(P_OBJ):		$(LIBFT_A)
 
 do_libft:
 				@make -C $(LIBFT)
-				@cp $(LIBFT)/$(LIBFT_A) .
+				@cp $(LIBFT) .
 
 clean:			
-				@/bin/rm -rf $(OBJ_DIR) $(LIBFT_A)
+				@/bin/rm -rf $(OBJ_DIR) $(LIBFT)
 				@make -C $(LIBFT) clean
 				@echo "Cleaned libft object files"
 
 fclean:			clean
-				@/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT_A)
+				@/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT)
 				@make -C $(LIBFT) fclean
 				@echo "Cleaned $(NAME)"
 
