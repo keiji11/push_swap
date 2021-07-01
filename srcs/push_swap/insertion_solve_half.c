@@ -18,22 +18,22 @@
 
 static void	rotate_and_push_to_a(t_frame *frame)
 {
-	if (SMALL_ROTATE >= 0)
-		while (SMALL_ROTATE--)
+	if (frame->small_rotate >= 0)
+		while (frame->small_rotate--)
 			do_rb(frame);
-	else if (SMALL_RROTATE >= 0)
-		while (SMALL_RROTATE--)
+	else if (frame->small_rrotate >= 0)
+		while (frame->small_rrotate--)
 			do_rrb(frame);
-	else if (BIG_ROTATE >= 0)
-		while (BIG_ROTATE--)
+	else if (frame->big_rotate >= 0)
+		while (frame->big_rotate--)
 			do_rb(frame);
-	else if (BIG_RROTATE >= 0)
-		while (BIG_RROTATE--)
+	else if (frame->big_rrotate >= 0)
+		while (frame->big_rrotate--)
 			do_rrb(frame);
 	do_pa(frame);
-	if (SMALL_FLAG)
+	if (frame->small_flag)
 		do_ra(frame);
-	if (BIG_FLAG || !frame->b)
+	if (frame->big_flag || !frame->b)
 		frame->after_rotate++;
 	reset_moves(frame);
 }
@@ -42,9 +42,9 @@ static void	push_big_small(t_frame *frame, t_stack *stack, t_stack *stack_end)
 {
 	while (1)
 	{
-		while (stack->num != SMALLEST && stack->num != BIGGEST)
+		while (stack->num != frame->smallest && stack->num != frame->biggest)
 			stack = stack->next;
-		if (stack->num == SMALLEST || stack->num == BIGGEST)
+		if (stack->num == frame->smallest || stack->num == frame->biggest)
 		{
 			rotate_and_push_to_a(frame);
 			break ;
@@ -79,8 +79,8 @@ void	insertion_solve_half(t_frame *frame)
 		{
 			find_biggest_smallest(frame, 'b');
 			find_moves(frame, 'b');
-			if (frame->b && (SMALL_ROTATE >= 0 || SMALL_RROTATE >= 0
-					|| BIG_ROTATE >= 0 || BIG_RROTATE >= 0))
+			if (frame->b && (frame->small_rotate >= 0 || frame->small_rrotate >= 0
+					|| frame->big_rotate >= 0 || frame->big_rrotate >= 0))
 				push_big_small(frame, frame->b, frame->b->prev);
 		}
 		while (--frame->after_rotate)

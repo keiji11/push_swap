@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:14:30 by llucente          #+#    #+#             */
-/*   Updated: 2021/06/30 13:02:22 by marvin           ###   ########.fr       */
+/*   Updated: 2021/07/01 14:26:58 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch)
 void	ter_flag_rrotate(int flag, t_frame *frame)
 {
 	if (flag == 1)
-		SMALL_RROTATE++;
+		frame->small_rrotate++;
 	else
-		BIG_RROTATE++;
+		frame->big_rrotate++;
 }

@@ -14,12 +14,12 @@
 
 void	reset_moves(t_frame *frame)
 {
-	BIGGEST = 0;
-	BIG_ROTATE = 0;
-	BIG_RROTATE = 0;
-	BIG_FLAG = 0;
-	SMALLEST = 0;
-	SMALL_ROTATE = 0;
-	SMALL_RROTATE = 0;
-	SMALL_FLAG = 0;
+	frame->biggest = 0;
+	frame->big_rotate = 0;
+	frame->big_rrotate = 0;
+	frame->big_flag = 0;
+	frame->smallest = 0;
+	frame->small_rotate = 0;
+	frame->small_rrotate = 0;
+	frame->small_flag = 0;
 }

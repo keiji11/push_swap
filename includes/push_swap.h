@@ -6,7 +6,7 @@
 /*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:11:37 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/01 12:45:17 by keiji-pop        ###   ########.fr       */
+/*   Updated: 2021/07/01 14:34:30 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdint.h>
-
-# define QUARTER frame->quarter
-# define MEDIAN frame->median
-# define THREE_Q frame->three_quarters
-# define BIGGEST frame->biggest
-# define BIG_ROTATE frame->big_rotate
-# define BIG_RROTATE frame->big_rrotate
-# define BIG_FLAG frame->big_flag
-# define SMALLEST frame->smallest
-# define SMALL_ROTATE frame->small_rotate
-# define SMALL_RROTATE frame->small_rrotate
-# define SMALL_FLAG frame->small_flag
 
 /*
 ** circular doubly-linked list
@@ -150,4 +138,7 @@ void				not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
 void				check_stacks(t_frame *frame, t_stack *stack_a, 
 						t_stack *stack_b);
 
+void				switching(t_frame *frame, t_stack *stack_a, int split);
+void				equal_stack(t_stack *stack_a, t_stack *stack_a_end,
+						int flag);
 #endif

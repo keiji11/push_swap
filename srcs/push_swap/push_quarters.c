@@ -19,28 +19,28 @@
 
 static void	push_first_quarter(t_frame *frame)
 {
-	if (frame->b && frame->b->num > QUARTER / 2)
+	if (frame->b && frame->b->num > frame->quarter / 2)
 		do_rb(frame);
 	do_pb(frame);
 }
 
 static void	push_second_quarter(t_frame *frame)
 {
-	if (frame->b && frame->b->num > (MEDIAN / 4) * 3)
+	if (frame->b && frame->b->num > (frame->median / 4) * 3)
 		do_rb(frame);
 	do_pb(frame);
 }
 
 static void	push_third_quarter(t_frame *frame)
 {
-	if (frame->b && frame->b->num > (MEDIAN / 4) * 5)
+	if (frame->b && frame->b->num > (frame->median / 4) * 5)
 		do_rb(frame);
 	do_pb(frame);
 }
 
 static void	push_fourth_quarter(t_frame *frame)
 {
-	if (frame->b && frame->b->num > (MEDIAN / 4) * 7)
+	if (frame->b && frame->b->num > (frame->median / 4) * 7)
 		do_rb(frame);
 	do_pb(frame);
 }
@@ -55,20 +55,8 @@ void	push_quarters(t_frame *frame, t_stack *stack_a, int split)
 	find_biggest_smallest(frame, 'a');
 	while (flag != 1)
 	{
-		if (stack_a == stack_a_end)
-			flag = 1;
-		if (split == 1 && stack_a->num <= QUARTER)
-			push_first_quarter(frame);
-		else if (split == 2 && stack_a->num > QUARTER && stack_a->num <= MEDIAN)
-			push_second_quarter(frame);
-		else if (split == 3 && stack_a->num > MEDIAN && stack_a->num <= THREE_Q)
-			push_third_quarter(frame);
-		else if (split == 4 && stack_a->num > THREE_Q)
-			push_fourth_quarter(frame);
-		else if (split == 4 && stack_a->num == SMALLEST)
-			break ;
-		else
-			do_ra(frame);
+		equal_stack(stack_a, stack_a_end, flag);
+		switching(frame, stack_a, split);
 		stack_a = frame->a;
 	}
 	reset_moves(frame);

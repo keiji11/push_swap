@@ -6,7 +6,7 @@
 /*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 18:28:39 by keiji-pop         #+#    #+#             */
-/*   Updated: 2021/06/26 19:08:57 by keiji-pop        ###   ########.fr       */
+/*   Updated: 2021/07/01 14:24:43 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void	solve_3(t_frame *frame)
 
 	find_biggest(frame, 'a');
 	moves_to_end(frame, 'a', 2);
-	if (BIG_RROTATE >= 1)
-		while (BIG_RROTATE-- > 1)
+	if (frame->big_rrotate >= 1)
+		while (frame->big_rrotate-- > 1)
 			do_rra(frame);
 	stack_a = frame->a;
 	tmp = frame->a->next;
@@ -40,7 +40,7 @@ static void	solve_4(t_frame *frame)
 
 	stack_a = frame->a;
 	find_biggest_smallest(frame, 'a');
-	while (stack_a->num != SMALLEST)
+	while (stack_a->num != frame->smallest)
 	{
 		do_ra(frame);
 		stack_a = stack_a->next;
@@ -63,7 +63,7 @@ static void	solve_5(t_frame *frame)
 	{
 		if (frame->a == stack_a_end)
 			flag = 1;
-		if (frame->a->num < MEDIAN)
+		if (frame->a->num < frame->median)
 			do_pb(frame);
 		else
 			do_ra(frame);

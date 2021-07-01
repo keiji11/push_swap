@@ -30,11 +30,11 @@ void	push_median(t_frame *frame, int split)
 	{
 		if (stack == stack_a_end)
 			flag = 1;
-		if (split == 1 && stack->num <= MEDIAN)
+		if (split == 1 && stack->num <= frame->median)
 			do_pb(frame);
-		else if (split == 2 && stack->num > MEDIAN)
+		else if (split == 2 && stack->num > frame->median)
 			do_pb(frame);
-		else if (stack->num == SMALLEST)
+		else if (stack->num == frame->smallest)
 			break ;
 		else
 			do_ra(frame);

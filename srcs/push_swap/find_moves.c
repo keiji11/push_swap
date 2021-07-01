@@ -6,7 +6,7 @@
 /*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 18:40:01 by keiji-pop         #+#    #+#             */
-/*   Updated: 2021/06/26 18:57:58 by keiji-pop        ###   ########.fr       */
+/*   Updated: 2021/07/01 14:30:52 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	moves_to_start(t_frame *frame, char stack_name, int flag)
 	{
 		ternary_stack_frame_a_b(stack_name, frame, 'a');
 		if (flag == 1)
-			element = SMALLEST;
+			element = frame->smallest;
 		else
-			element = BIGGEST;
+			element = frame->biggest;
 		while (tmp->num != element)
 		{
 			if (flag == 1)
-				SMALL_ROTATE++;
+				frame->small_rotate++;
 			else
-				BIG_ROTATE++;
+				frame->big_rotate++;
 			tmp = tmp->next;
 		}
 	}
@@ -59,9 +59,9 @@ void	moves_to_end(t_frame *frame, char stack_name, int flag)
 		else
 			tmp = frame->b->prev;
 		if (flag == 1)
-			element = SMALLEST;
+			element = frame->smallest;
 		else
-			element = BIGGEST;
+			element = frame->biggest;
 		while (tmp->num != element)
 		{
 			ter_flag_rrotate(flag, frame);
@@ -82,10 +82,10 @@ static void	moves_smallest(t_frame *frame, char stack_name)
 	{
 		moves_to_start(frame, stack_name, flag);
 		moves_to_end(frame, stack_name, flag);
-		if (SMALL_ROTATE <= SMALL_RROTATE)
-			SMALL_RROTATE = -1;
+		if (frame->small_rotate <= frame->small_rrotate)
+			frame->small_rrotate = -1;
 		else
-			SMALL_ROTATE = -1;
+			frame->small_rotate = -1;
 	}
 }
 
@@ -100,10 +100,10 @@ static void	moves_biggest(t_frame *frame, char stack_name)
 	{
 		moves_to_start(frame, stack_name, flag);
 		moves_to_end(frame, stack_name, flag);
-		if (BIG_ROTATE <= BIG_RROTATE)
-			BIG_RROTATE = -1;
+		if (frame->big_rotate <= frame->big_rrotate)
+			frame->big_rrotate = -1;
 		else
-			BIG_ROTATE = -1;
+			frame->big_rotate = -1;
 	}
 }
 
@@ -120,20 +120,23 @@ void	find_moves(t_frame *frame, char stack_name)
 	ternary_stack_frame_a_b(stack_name, frame, 'a');
 	moves_smallest(frame, 'b');
 	moves_biggest(frame, 'b');
-	if (BIG_ROTATE != -1 && (BIG_ROTATE >= SMALL_ROTATE
-			&& BIG_ROTATE >= SMALL_RROTATE))
-		BIG_ROTATE = -1;
-	else if (BIG_RROTATE != -1 && (BIG_RROTATE >= SMALL_ROTATE
-			&& BIG_RROTATE >= SMALL_RROTATE))
-		BIG_RROTATE = -1;
-	else if (SMALL_ROTATE != -1 && (SMALL_ROTATE >= BIG_ROTATE
-			&& SMALL_ROTATE >= BIG_RROTATE))
-		SMALL_ROTATE = -1;
-	else if (SMALL_RROTATE != -1 && (SMALL_RROTATE >= BIG_ROTATE
-			&& SMALL_RROTATE >= BIG_RROTATE))
-		SMALL_RROTATE = -1;
-	if (SMALL_ROTATE != -1 || SMALL_RROTATE != -1)
-		SMALL_FLAG = 1;
-	else if (BIG_ROTATE != -1 || BIG_RROTATE != -1)
-		BIG_FLAG = 1;
+	if (frame->big_rotate != -1 && (frame->big_rotate >= frame->small_rotate
+			&& frame->big_rotate >= frame->small_rrotate))
+		frame->big_rotate = -1;
+	else if (frame->big_rrotate != -1
+		&& (frame->big_rrotate >= frame->small_rotate
+			&& frame->big_rrotate >= frame->small_rrotate))
+		frame->big_rrotate = -1;
+	else if (frame->small_rotate != -1
+		&& (frame->small_rotate >= frame->big_rotate
+			&& frame->small_rotate >= frame->big_rrotate))
+		frame->small_rotate = -1;
+	else if (frame->small_rrotate != -1 
+		&& (frame->small_rrotate >= frame->big_rotate
+			&& frame->small_rrotate >= frame->big_rrotate))
+		frame->small_rrotate = -1;
+	if (frame->small_rotate != -1 || frame->small_rrotate != -1)
+		frame->small_flag = 1;
+	else if (frame->big_rotate != -1 || frame->big_rrotate != -1)
+		frame->big_flag = 1;
 }

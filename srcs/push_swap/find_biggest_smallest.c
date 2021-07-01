@@ -6,7 +6,7 @@
 /*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 18:35:04 by keiji-pop         #+#    #+#             */
-/*   Updated: 2021/07/01 12:46:48 by keiji-pop        ###   ########.fr       */
+/*   Updated: 2021/07/01 13:59:43 by keiji-pop        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	find_smallest(t_frame *frame, char stack_name)
 		end = frame->a->prev;
 	else
 		end = frame->b->prev;
-	SMALLEST = BIGGEST;
+	frame->smallest = frame->biggest;
 	while (1)
 	{
-		if (tmp->num <= SMALLEST)
-			SMALLEST = tmp->num;
+		if (tmp->num <= frame->smallest)
+			frame->smallest = tmp->num;
 		if (tmp == end)
 			break ;
 		tmp = tmp->next;
@@ -53,15 +53,15 @@ void	find_biggest(t_frame *frame, char stack_name)
 	else
 		stack = frame->b;
 	tmp = stack;
-	BIGGEST = tmp->num;
+	frame->biggest = tmp->num;
 	if (stack_name == 'a')
 		end = frame->a->prev;
 	else
 		end = frame->b->prev;
 	while (1)
 	{
-		if (tmp->num > BIGGEST)
-			BIGGEST = tmp->num;
+		if (tmp->num > frame->biggest)
+			frame->biggest = tmp->num;
 		if (tmp == end)
 			break ;
 		tmp = tmp->next;

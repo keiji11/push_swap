@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 17:54:22 by llucente          #+#    #+#              #
-#    Updated: 2021/06/30 12:41:37 by marvin           ###   ########.fr        #
+#    Updated: 2021/07/01 13:53:29 by keiji-pop        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ S_SRC =			create_frame.c \
 				stack_add_end.c \
 				stack_add_top.c \
 				stack_del_top.c \
-				utils.c
+				utils.c \
+				utils2.c
 
 P_SRC =			find_biggest_smallest.c \
 				find_median.c \
