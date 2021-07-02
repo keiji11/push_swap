@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insertion_solve_half.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/29 15:58:40 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/29 15:58:40 by marvin           ###   ########.fr       */
+/*   Created: 2021/07/02 15:57:53 by llucente          #+#    #+#             */
+/*   Updated: 2021/07/02 15:57:53 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void	insertion_solve_half(t_frame *frame)
 		{
 			find_biggest_smallest(frame, 'b');
 			find_moves(frame, 'b');
-			if (frame->b && (frame->small_rotate >= 0 || frame->small_rrotate >= 0
+			if (frame->b && (frame->small_rotate >= 0
+					|| frame->small_rrotate >= 0
 					|| frame->big_rotate >= 0 || frame->big_rrotate >= 0))
 				push_big_small(frame, frame->b, frame->b->prev);
 		}

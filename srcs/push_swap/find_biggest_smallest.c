@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_biggest_smallest.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
+/*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/26 18:35:04 by keiji-pop         #+#    #+#             */
-/*   Updated: 2021/07/01 13:59:43 by keiji-pop        ###   ########.fr       */
+/*   Created: 2021/07/02 15:57:15 by llucente          #+#    #+#             */
+/*   Updated: 2021/07/02 15:57:16 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

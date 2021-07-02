@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insertion_solve_quarters.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/29 16:06:11 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/29 16:06:11 by marvin           ###   ########.fr       */
+/*   Created: 2021/07/02 15:58:27 by llucente          #+#    #+#             */
+/*   Updated: 2021/07/02 15:58:27 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

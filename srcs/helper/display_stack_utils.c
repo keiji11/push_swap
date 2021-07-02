@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_stack_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keiji-pop <keiji-pop@student.42.fr>        +#+  +:+       +#+        */
+/*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 14:41:16 by keiji-pop         #+#    #+#             */
-/*   Updated: 2021/07/01 14:45:14 by keiji-pop        ###   ########.fr       */
+/*   Created: 2021/07/02 15:53:27 by llucente          #+#    #+#             */
+/*   Updated: 2021/07/02 15:53:28 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
