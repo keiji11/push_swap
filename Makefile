@@ -6,7 +6,7 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/02 15:46:25 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/08 18:22:31 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ LIBFT_A =		libftprintf.a
 COMP =			gcc -Wall -Werror -Wextra -I includes -I libft -c -o
 
 OBJ_DIR =		obj/
-SRC_DIR =		srcs/
+S_SRC_DIR =		srcs/shared/
+P_SRC_DIR =		srcs/push_swap/
+C_SRC_DIR =		srcs/checker/
 LIBFT =			libft/
 
 S_SRC =			create_frame.c \
@@ -67,7 +69,9 @@ P_OBJ =			$(P_SRC:%.c=%.o)
 C_OBJ =			$(C_SRC:%.c=%.o)
 OBJ =			$(S_OBJ) $(P_OBJ) $(C_OBJ)
 
-SRC_PATH =   	$(S_SRC:%=$(S_SRC_DIR)%)
+S_SRC_PATH =   	$(S_SRC:%=$(S_SRC_DIR)%)
+P_SRC_PATH =   	$(P_SRC:%=$(P_SRC_DIR)%)
+C_SRC_PATH =   	$(C_SRC:%=$(C_SRC_DIR)%)
 SRC_PATH =		$(S_SRC_PATH) $(P_SRC_PATH) $(C_SRC_PATH)
 
 S_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(S_OBJ))
