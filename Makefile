@@ -6,7 +6,7 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/08 18:22:31 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/09 15:26:03 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,10 @@ PUSH_SWAP =		push_swap
 CHECKER =		checker
 NAME =			$(PUSH_SWAP) $(CHECKER)
 LIBFT_A =		libftprintf.a
+CC = 			gcc
+CFLAGS =		-Wall -Werror -Wextra
 
-COMP =			gcc -Wall -Werror -Wextra -I includes -I libft -c -o
+COMP =			$(CC) $(CFLAGS) -I includes -I libft -c -o
 
 OBJ_DIR =		obj/
 S_SRC_DIR =		srcs/shared/
