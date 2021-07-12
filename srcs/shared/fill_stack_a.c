@@ -6,12 +6,12 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:08 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:56:09 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:54:55 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include "libft.h"
+#include "libft.h"
 
 static long	atoi_push_swap(t_frame *frame, char *str)
 {
@@ -64,7 +64,6 @@ static void	check_duplicates(t_frame *frame)
 static void	complete_filling(t_frame *frame, char *str, int i, int j)
 {
 	long int	test_int_size;
-	int			j;
 
 	while (str)
 	{
