@@ -48,13 +48,24 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 
 	stack_a = frame->a;
 	stack_b = frame->b;
-	if_stack_a_b(a_flag, b_flag);
+	if (!stack_a)
+		a_flag = 1;
+	if (!stack_b)
+		b_flag = 1;
 	while (1)
 	{
-		if_flag_a(a_flag, stack_a, a);
-		if_flag_b(b_flag, stack_b, b);
-		if_stack_a_2(frame, a_flag, stack_a);
-		if_stack_a_2(frame, b_flag, stack_b);
+		if (!a_flag)
+			a = ft_itoa(stack_a->num);
+		else
+			a = ft_strdup("");
+		if (!b_flag)
+			b = ft_itoa(stack_b->num);
+		else
+			b = ft_strdup("");
+		if (!stack_a || stack_a == frame->a->prev)
+			a_flag = 1;
+		if (!stack_b || stack_b == frame->b->prev)
+			b_flag = 1;
 		not_stack(stack_a, stack_b, a, b);
 		if ((!stack_a && !stack_b))
 			break ;

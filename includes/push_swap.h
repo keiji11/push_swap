@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:48:40 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/12 18:19:43 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:41:20 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdint.h>
+# include <stdio.h>
 
 /*
 ** circular doubly-linked list
