@@ -14,6 +14,12 @@
 // #include "ft_printf.h"
 #include "libft.h"
 
+static void	free_strings(char *a, char *b)
+{
+	free(a);
+	free(b);
+}
+
 void	not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
 			char *b)
 {
@@ -33,12 +39,6 @@ void	check_stacks(t_frame *frame, t_stack *stack_a, t_stack *stack_b)
 		stack_b = NULL;
 }
 
-static void	free_strings(char *a, char *b)
-{
-	free(a);
-	free(b);
-}
-
 static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 {
 	t_stack		*stack_a;
@@ -51,10 +51,10 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 	if_stack_a_b(a_flag, b_flag);
 	while (1)
 	{
-		if_flag_a(a_flag, stack_a, *a);
-		if_flag_b(b_flag, stack_b, *b);
-		if_stack_a_2(frame, a_flag, a);
-		if_stack_a_2(frame, b_flag, b);
+		if_flag_a(a_flag, stack_a, a);
+		if_flag_b(b_flag, stack_b, b);
+		if_stack_a_2(frame, a_flag, stack_a);
+		if_stack_a_2(frame, b_flag, stack_b);
 		not_stack(stack_a, stack_b, a, b);
 		if ((!stack_a && !stack_b))
 			break ;

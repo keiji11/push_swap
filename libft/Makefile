@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME = libft.a
-HEAD = libft.h
-GNL = get_next_line.h
+HEAD = ./
+GNL = ./
 
 SRCS = ft_atoi.c \
 		ft_isdigit.c \
@@ -99,17 +99,17 @@ OBJ = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib libft.a
+	ar rc $(NAME) $(OBJ)
+	ranlib libft.a
 
 %.o: %.c
-	@gcc -c -I $(HEAD) -I $(GNL) $(FLAGS) $(SRCS)
+	gcc -c -I $(HEAD) -I $(GNL) $(FLAGS) $(SRCS)
 
 clean :
-	@rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
 fclean : clean
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re : fclean all
 

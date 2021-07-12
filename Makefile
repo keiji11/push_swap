@@ -6,14 +6,14 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/09 15:26:03 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/12 18:19:53 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PUSH_SWAP =		push_swap
 CHECKER =		checker
 NAME =			$(PUSH_SWAP) $(CHECKER)
-LIBFT_A =		libftprintf.a
+LIBFT_A =		libft.a
 CC = 			gcc
 CFLAGS =		-Wall -Werror -Wextra
 
@@ -27,7 +27,7 @@ LIBFT =			libft/
 
 S_SRC =			create_frame.c \
 				display_stacks.c \
-				display_stacks_utils.c \
+				display_stack_utils.c \
 				do_pa.c \
 				do_pb.c \
 				do_ra.c \
@@ -82,50 +82,50 @@ C_OBJ_PATH =	$(addprefix $(OBJ_DIR), $(C_OBJ))
 OBJ_PATH =		$(S_OBJ_PATH) $(P_OBJ_PATH) $(C_OBJ_PATH)
 
 all:			do_libft $(OBJ_DIR) $(NAME)
-				@echo "PUSH_SWAP AND CHECKER COMPLETE"
+				echo "PUSH_SWAP AND CHECKER COMPLETE"
 
 $(OBJ_DIR):
-				@mkdir -p $(OBJ_DIR)
-				@echo Create: Object directory
+				mkdir -p $(OBJ_DIR)
+				echo Create: Object directory
 
 $(NAME):		$(OBJ_PATH)
-				@gcc $(S_OBJ_PATH) $(P_OBJ_PATH) *.a -o push_swap \
+				gcc $(S_OBJ_PATH) $(P_OBJ_PATH) *.a -o push_swap \
 					-I includes -I libft
-				@gcc $(S_OBJ_PATH) $(C_OBJ_PATH) *.a -o checker \
+				gcc $(S_OBJ_PATH) $(C_OBJ_PATH) *.a -o checker \
 					-I includes -I libft
 
 $(S_OBJ_PATH):	$(S_SRC_PATH)
-				@$(MAKE) $(S_OBJ)
+				$(MAKE) $(S_OBJ)
 
 $(P_OBJ_PATH):	$(P_SRC_PATH)
-				@$(MAKE) $(P_OBJ)
+				$(MAKE) $(P_OBJ)
 
 $(C_OBJ_PATH):	$(C_SRC_PATH)
-				@$(MAKE) $(C_OBJ)
+				$(MAKE) $(C_OBJ)
 
 $(S_OBJ):		$(LIBFT_A)
-				@echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
-				@$(COMP) $(OBJ_DIR)$@ $(S_SRC_DIR)$(@:%.o=%.c)
+				echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
+				$(COMP) $(OBJ_DIR)$@ $(S_SRC_DIR)$(@:%.o=%.c)
 $(C_OBJ):		$(LIBFT_A)
-				@echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
-				@$(COMP) $(OBJ_DIR)$@ $(C_SRC_DIR)$(@:%.o=%.c)
+				echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
+				$(COMP) $(OBJ_DIR)$@ $(C_SRC_DIR)$(@:%.o=%.c)
 $(P_OBJ):		$(LIBFT_A)
-				@echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
-				@$(COMP) $(OBJ_DIR)$@ $(P_SRC_DIR)$(@:%.o=%.c)
+				echo Create: $(@:obj/%=%)"\x1b[1A\x1b[M"
+				$(COMP) $(OBJ_DIR)$@ $(P_SRC_DIR)$(@:%.o=%.c)
 
 do_libft:
-				@make -C $(LIBFT)
-				@cp $(LIBFT) .
+				make -C $(LIBFT)
+				cp $(LIBFT)/$(LIBFT_A) .
 
 clean:			
-				@/bin/rm -rf $(OBJ_DIR) $(LIBFT)
-				@make -C $(LIBFT) clean
-				@echo "Cleaned libft object files"
+				/bin/rm -rf $(OBJ_DIR) $(LIBFT)
+				make -C $(LIBFT) clean
+				echo "Cleaned libft object files"
 
 fclean:			clean
-				@/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT)
-				@make -C $(LIBFT) fclean
-				@echo "Cleaned $(NAME)"
+				/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT)
+				make -C $(LIBFT) fclean
+				echo "Cleaned $(NAME)"
 
 re: 			fclean all
 
