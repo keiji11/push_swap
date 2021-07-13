@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:31 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:56:32 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:01:04 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ void	stack_add_end(t_frame *frame, char stack_name, int num)
 		tmp->num = num;
 	}
 	else
-		no_stack_add_end(*top, frame, num);
+		no_stack_add_end(top, frame, num);
 }

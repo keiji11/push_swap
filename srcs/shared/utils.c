@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:56 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:56:57 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:01:57 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isneg(char c)
 {
-	if (c == "-")
+	if (c == '-')
 		return (-1);
 	else
 		return (0);
@@ -32,7 +32,8 @@ void	ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch)
 {
 	t_stack	*stack;
 
-	if (stack_name == ch)
+	stack = NULL;
+	if (stack_name == ch && !stack)
 		stack = frame->a;
 	else
 		stack = frame->b;

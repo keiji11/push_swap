@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:57:34 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:57:35 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:08:31 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	moves_to_start(t_frame *frame, char stack_name, int flag)
 	t_stack	*tmp;
 	int		element;
 
-	ternary_stack_frame_a_b(stack_name, frame, 'a');
+	ter_stack_frm_a_b(stack_name, frame, 'a');
 	if (stack)
 	{
-		ternary_stack_frame_a_b(stack_name, frame, 'a');
+		ter_stack_frm_a_b(stack_name, frame, 'a');
 		if (flag == 1)
 			element = frame->smallest;
 		else
@@ -51,7 +51,7 @@ void	moves_to_end(t_frame *frame, char stack_name, int flag)
 	t_stack	*tmp;
 	int		element;
 
-	ternary_stack_frame_a_b(stack_name, frame, 'a');
+	ter_stack_frm_a_b(stack_name, frame, 'a');
 	if (stack)
 	{
 		if (stack_name == 'a')
@@ -76,7 +76,7 @@ static void	moves_smallest(t_frame *frame, char stack_name)
 	t_stack	*stack;
 	int		flag;
 
-	ternary_stack_frame_a_b(stack_name, frame, 'a');
+	ter_stack_frm_a_b(stack_name, frame, 'a');
 	flag = 1;
 	if (stack)
 	{
@@ -94,7 +94,7 @@ static void	moves_biggest(t_frame *frame, char stack_name)
 	t_stack	*stack;
 	int		flag;
 
-	ternary_stack_frame_a_b(stack_name, frame, 'a');
+	ter_stack_frm_a_b(stack_name, frame, 'a');
 	flag = 2;
 	if (stack)
 	{
@@ -117,7 +117,7 @@ void	find_moves(t_frame *frame, char stack_name)
 {
 	t_stack	*stack;
 
-	ternary_stack_frame_a_b(stack_name, frame, 'a');
+	ter_stack_frm_a_b(stack_name, frame, 'a');
 	moves_smallest(frame, 'b');
 	moves_biggest(frame, 'b');
 	if (frame->big_rotate != -1 && (frame->big_rotate >= frame->small_rotate

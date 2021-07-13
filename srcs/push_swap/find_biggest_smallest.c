@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:57:15 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:57:16 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:05:01 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ void	find_biggest_smallest(t_frame *frame, char stack_name)
 {
 	t_stack		*stack;
 
-	if (stack_name == 'a')
+	stack = NULL;
+	if (stack_name == 'a' && !stack)
 		stack = frame->a;
 	else
 		stack = frame->b;

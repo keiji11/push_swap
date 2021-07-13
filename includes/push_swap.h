@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:48:40 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/12 18:41:20 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:04:25 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,4 +142,8 @@ void				check_stacks(t_frame *frame, t_stack *stack_a,
 void				switching(t_frame *frame, t_stack *stack_a, int split);
 void				equal_stack(t_stack *stack_a, t_stack *stack_a_end,
 						int flag);
+void				push_first_quarter(t_frame *frame);
+void				push_second_quarter(t_frame *frame);
+void				push_third_quarter(t_frame *frame);
+void				push_fourth_quarter(t_frame *frame);
 #endif
