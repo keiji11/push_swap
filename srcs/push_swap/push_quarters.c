@@ -17,28 +17,28 @@
 ** based on split flag
 */
 
-static void	push_first_quarter(t_frame *frame)
+void	push_first_quarter(t_frame *frame)
 {
 	if (frame->b && frame->b->num > frame->quarter / 2)
 		do_rb(frame);
 	do_pb(frame);
 }
 
-static void	push_second_quarter(t_frame *frame)
+void	push_second_quarter(t_frame *frame)
 {
 	if (frame->b && frame->b->num > (frame->median / 4) * 3)
 		do_rb(frame);
 	do_pb(frame);
 }
 
-static void	push_third_quarter(t_frame *frame)
+void	push_third_quarter(t_frame *frame)
 {
 	if (frame->b && frame->b->num > (frame->median / 4) * 5)
 		do_rb(frame);
 	do_pb(frame);
 }
 
-static void	push_fourth_quarter(t_frame *frame)
+void	push_fourth_quarter(t_frame *frame)
 {
 	if (frame->b && frame->b->num > (frame->median / 4) * 7)
 		do_rb(frame);

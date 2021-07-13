@@ -6,7 +6,7 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/12 18:19:53 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/13 19:21:53 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,7 @@ S_SRC =			create_frame.c \
 				stack_add_end.c \
 				stack_add_top.c \
 				stack_del_top.c \
-				utils.c \
-				utils2.c
+				utils.c
 
 P_SRC =			find_biggest_smallest.c \
 				find_median.c \
@@ -60,7 +59,8 @@ P_SRC =			find_biggest_smallest.c \
 				reset_moves.c \
 				solve_5_or_less.c \
 				solver.c \
-				sorted.c
+				sorted.c \
+				utils2.c
 
 C_SRC =			checker.c \
 				do_launch.c \

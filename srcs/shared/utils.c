@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:56 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/13 19:01:57 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:09:55 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_goto_pushswap_error(int len, t_frame *frame)
 		return ;
 }
 
-void	ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch)
+t_stack	*ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch)
 {
 	t_stack	*stack;
 
@@ -37,6 +37,7 @@ void	ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch)
 		stack = frame->a;
 	else
 		stack = frame->b;
+	return (stack);
 }
 
 void	ter_flag_rrotate(int flag, t_frame *frame)

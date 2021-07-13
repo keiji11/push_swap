@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:48:40 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/13 19:04:25 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:20:59 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ void				reset_moves(t_frame *frame);
 void				solve_5_or_less(t_frame *frame);
 void				solver(t_frame *frame);
 int					sorted(t_frame *frame);
+void				switching(t_frame *frame, t_stack *stack_a, int split);
+void				equal_stack(t_stack *stack_a, t_stack *stack_a_end,
+						int flag);
 
 /*
 ** shared functions
@@ -126,7 +129,8 @@ void				next_el_list(t_stack **top, t_stack *tmp, int num);
 int					ft_isneg(char c);
 void				ft_goto_pushswap_error(int len, t_frame *frame);
 int					ft_strcmp(const char *s1, const char *s2);
-void				ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch);
+t_stack				*ter_stack_frm_a_b(char stack_name, t_frame *frame,
+						char ch);
 void				ter_flag_rrotate(int flag, t_frame *frame);
 
 void				if_stack_a_b(int a_flag, int b_flag);
@@ -138,10 +142,6 @@ void				not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
 						char *b);
 void				check_stacks(t_frame *frame, t_stack *stack_a,
 						t_stack *stack_b);
-
-void				switching(t_frame *frame, t_stack *stack_a, int split);
-void				equal_stack(t_stack *stack_a, t_stack *stack_a_end,
-						int flag);
 void				push_first_quarter(t_frame *frame);
 void				push_second_quarter(t_frame *frame);
 void				push_third_quarter(t_frame *frame);
