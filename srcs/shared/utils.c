@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:56 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/13 19:09:55 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/14 19:01:20 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isneg(char c)
 	if (c == '-')
 		return (-1);
 	else
-		return (0);
+		return (1);
 }
 
 void	ft_goto_pushswap_error(int len, t_frame *frame)

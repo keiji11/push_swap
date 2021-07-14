@@ -6,14 +6,14 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:08 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/12 18:54:55 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/14 19:02:12 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static long	atoi_push_swap(t_frame *frame, char *str)
+long	atoi_push_swap(t_frame *frame, char *str)
 {
 	long	num;
 	int		i;
@@ -42,7 +42,7 @@ static long	atoi_push_swap(t_frame *frame, char *str)
 	return (num * sign);
 }
 
-static void	check_duplicates(t_frame *frame)
+void	check_duplicates(t_frame *frame)
 {
 	t_stack	*slow;
 	t_stack	*fast;
@@ -61,9 +61,9 @@ static void	check_duplicates(t_frame *frame)
 	}
 }
 
-static void	complete_filling(t_frame *frame, char *str, int i, int j)
+void	complete_filling(t_frame *frame, char *str, int i, int j)
 {
-	long int	test_int_size;
+	long	test_int_size;
 
 	while (str)
 	{
@@ -89,7 +89,7 @@ static void	complete_filling(t_frame *frame, char *str, int i, int j)
 		push_swap_error(frame);
 }
 
-static void	error_parser(t_frame *frame)
+void	error_parser(t_frame *frame)
 {
 	char	*str;
 	int		i;

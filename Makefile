@@ -6,7 +6,7 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/14 17:19:14 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/14 18:01:35 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBFT_A =		libft.a
 CC = 			gcc
 CFLAGS =		-Wall -Werror -Wextra
 
-COMP =			$(CC) -g $(CFLAGS) -I includes -I libft -c -o
+COMP =			$(CC) -I includes -I libft -g $(CFLAGS) -c -o
 
 OBJ_DIR =		obj/
 S_SRC_DIR =		srcs/shared/

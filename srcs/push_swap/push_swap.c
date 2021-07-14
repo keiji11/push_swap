@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:58:51 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:58:53 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/14 18:04:54 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** If stack A is not sorted, the solver function is called.
 */
 
-static void	push_swap(t_frame *frame)
+void	push_swap(t_frame *frame)
 {
 	fill_stack_a(frame);
 	frame->do_write = 1;
