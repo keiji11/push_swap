@@ -56,3 +56,4 @@ tasks.json
 launch.json
 checker
 push_swap
+*.py
