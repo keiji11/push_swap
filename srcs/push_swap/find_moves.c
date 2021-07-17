@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:57:34 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/13 19:22:36 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/17 22:17:04 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	moves_to_start(t_frame *frame, char stack_name, int flag)
 	stack = ter_stack_frm_a_b(stack_name, frame, 'a');
 	if (stack)
 	{
-		stack = ter_stack_frm_a_b(stack_name, frame, 'a');
+		tmp = ter_stack_frm_a_b(stack_name, frame, 'a');
 		if (flag == 1)
 			element = frame->smallest;
 		else
@@ -118,7 +118,7 @@ void	find_moves(t_frame *frame, char stack_name)
 	t_stack	*stack;
 
 	stack = ter_stack_frm_a_b(stack_name, frame, 'a');
-	if (stack || 1)
+	if (stack)
 		moves_smallest(frame, 'b');
 	moves_biggest(frame, 'b');
 	if (frame->big_rotate != -1 && (frame->big_rotate >= frame->small_rotate

@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:56:56 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/14 19:01:20 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/17 22:18:09 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_stack	*ter_stack_frm_a_b(char stack_name, t_frame *frame, char ch)
 	t_stack	*stack;
 
 	stack = NULL;
-	if (stack_name == ch && !stack)
+	if (stack_name == ch)
 		stack = frame->a;
 	else
 		stack = frame->b;
