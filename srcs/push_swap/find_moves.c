@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:57:34 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/17 22:17:04 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/18 16:32:55 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void	find_moves(t_frame *frame, char stack_name)
 		&& (frame->small_rotate >= frame->big_rotate
 			&& frame->small_rotate >= frame->big_rrotate))
 		frame->small_rotate = -1;
-	else if (frame->small_rrotate != -1 
+	else if (frame->small_rrotate != -1
 		&& (frame->small_rrotate >= frame->big_rotate
 			&& frame->small_rrotate >= frame->big_rrotate))
 		frame->small_rrotate = -1;

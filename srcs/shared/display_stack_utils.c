@@ -6,49 +6,47 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:53:27 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/12 18:51:35 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/18 17:24:38 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	if_stack_a_b(int a_flag, int b_flag)
-// {
-// 	t_stack	*stack_a;
-// 	t_stack	*stack_b;
+int	if_stack_flag(int flag)
+{
+	t_stack	*stack;
 
-// 	stack_a = NULL;
-// 	stack_b = NULL;
-// 	if (!stack_a)
-// 		a_flag = 1;
-// 	if (!stack_b)
-// 		b_flag = 1;
-// }
+	stack = NULL;
+	if (!stack)
+		flag = 1;
+	return (flag);
+}
 
-// void	if_flag_b(int b_flag, t_stack *stack_b, char *b)
-// {
-// 	if (!b_flag)
-// 		b = ft_itoa(stack_b->num);
-// 	else
-// 		b = ft_strdup("");
-// }
+char	*if_flag(int flag, t_stack *stack)
+{
+	char	*str;
 
-// void	if_flag_a(int a_flag, t_stack *stack_a, char *a)
-// {
-// 	if (!a_flag)
-// 		a = ft_itoa(stack_a->num);
-// 	else
-// 		a = ft_strdup("");
-// }
+	if (!flag)
+		str = ft_itoa(stack->num);
+	else
+		str = ft_strdup("");
+	return (str);
+}
 
-// void	if_stack_a_2(t_frame *frame, int a_flag, t_stack *stack_a)
-// {
-// 	if (!stack_a || stack_a == frame->a->prev)
-// 		a_flag = 1;
-// }
+int	if_stack_2_a(t_frame *frame, t_stack *stack)
+{
+	int	flag;
 
-// void	if_stack_b_2(t_frame *frame, int b_flag, t_stack *stack_b)
-// {
-// 	if (!stack_b || stack_b == frame->b->prev)
-// 		b_flag = 1;
-// }
+	if (!stack || stack == frame->a->prev)
+		flag = 1;
+	return (flag);
+}
+
+int	if_stack_2_b(t_frame *frame, t_stack *stack)
+{
+	int	flag;
+
+	if (!stack || stack == frame->b->prev)
+		flag = 1;
+	return (flag);
+}

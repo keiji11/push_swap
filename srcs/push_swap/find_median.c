@@ -66,7 +66,7 @@ void	median(t_frame *frame, char stack_name)
 	t_stack	*stack;
 
 	if (stack_name == 'a')
-		stack = frame->a; 
+		stack = frame->a;
 	else
 		stack = frame->b;
 	find_median(frame, stack, stack_name);

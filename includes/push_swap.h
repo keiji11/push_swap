@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:48:40 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/14 18:56:32 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/18 17:30:07 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,11 +136,10 @@ t_stack				*ter_stack_frm_a_b(char stack_name, t_frame *frame,
 						char ch);
 void				ter_flag_rrotate(int flag, t_frame *frame);
 
-void				if_stack_a_b(int a_flag, int b_flag);
-void				if_flag_a(int a_flag, t_stack *stack_a, char *a);
-void				if_flag_b(int b_flag, t_stack *stack_b, char *b);
-void				if_stack_b_2(t_frame *frame, int b_flag, t_stack *stack_b);
-void				if_stack_a_2(t_frame *frame, int a_flag, t_stack *stack_a);
+int					if_stack_flag(int flag);
+char				*if_flag(int flag, t_stack *stack);
+int					if_stack_2_a(t_frame *frame, t_stack *stack);
+int					if_stack_2_b(t_frame *frame, t_stack *stack);
 void				not_stack(t_stack *stack_a, t_stack *stack_b, char *a,
 						char *b);
 void				check_stacks(t_frame *frame, t_stack *stack_a,
@@ -149,4 +148,9 @@ void				push_first_quarter(t_frame *frame);
 void				push_second_quarter(t_frame *frame);
 void				push_third_quarter(t_frame *frame);
 void				push_fourth_quarter(t_frame *frame);
+
+char				*ft_itoa(intmax_t num);
+char				*ft_strdup(const char *s1);
+intmax_t			ft_count(intmax_t num);
+size_t				ft_strlen(const char *s);
 #endif

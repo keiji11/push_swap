@@ -6,7 +6,7 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/14 19:22:54 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/18 17:30:36 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,10 @@ S_SRC =			create_frame.c \
 				do_sb.c \
 				do_ss.c \
 				fill_stack_a.c \
+				ft_count.c \
+				ft_itoa.c \
+				ft_strdup.c \
+				ft_strlen.c \
 				push_swap_error.c \
 				push_swap_free.c \
 				stack_add_end.c \

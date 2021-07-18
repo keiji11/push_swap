@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include "ft_printf.h"
 #include "libft.h"
 
 static void	free_strings(char *a, char *b)
@@ -48,24 +47,14 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 
 	stack_a = frame->a;
 	stack_b = frame->b;
-	if (!stack_a)
-		a_flag = 1;
-	if (!stack_b)
-		b_flag = 1;
+	a_flag = if_stack_flag(a_flag);
+	b_flag = if_stack_flag(b_flag);
 	while (1)
 	{
-		if (!a_flag)
-			a = ft_itoa(stack_a->num);
-		else
-			a = ft_strdup("");
-		if (!b_flag)
-			b = ft_itoa(stack_b->num);
-		else
-			b = ft_strdup("");
-		if (!stack_a || stack_a == frame->a->prev)
-			a_flag = 1;
-		if (!stack_b || stack_b == frame->b->prev)
-			b_flag = 1;
+		a = if_flag(a_flag, stack_a);
+		b = if_flag(b_flag, stack_b);
+		a_flag = if_stack_2_a(frame, stack_a);
+		b_flag = if_stack_2_a(frame, stack_b);
 		not_stack(stack_a, stack_b, a, b);
 		if ((!stack_a && !stack_b))
 			break ;
@@ -73,7 +62,6 @@ static void	display_printf(t_frame *frame, int a_flag, int b_flag)
 		write(1, "\n", 1);
 		write(1, &b, 16);
 		write(1, "\n", 1);
-		// ft_printf("%15s | %-15s\n", a, b);
 		free_strings(a, b);
 		check_stacks(frame, stack_a, stack_b);
 	}
@@ -90,10 +78,9 @@ void	display_stacks(t_frame *frame)
 	if (frame->print_stacks == 1)
 	{
 		usleep(100000);
-		write(1, "Stack A\n", 8);
-		write(1, "Stack B\n", 8);
-		// ft_printf("\E[H\E[2J");
-		// ft_printf("%15s   %-15s\n", "Stack A", "Stack B");
+		write(1, "\E[H\E[2J\n", 10);
+		write(1, "Stack A\n", 16);
+		write(1, "Stack B\n", 16);
 		display_printf(frame, 0, 0);
 	}
 }
