@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:59:10 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:59:11 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/20 10:38:32 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	solve_5(t_frame *frame)
 	{
 		if (frame->a == stack_a_end)
 			flag = 1;
-		if (frame->a->num < frame->median)
+		if (frame->a->num < frame->med)
 			do_pb(frame);
 		else
 			do_ra(frame);

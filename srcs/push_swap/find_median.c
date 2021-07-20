@@ -55,9 +55,9 @@ static void	find_median(t_frame *frame, t_stack *stack, char stack_name)
 		stack = stack->next;
 	}
 	sort_array(array, frame->stack_len);
-	frame->quarter = array[quarter_len];
-	frame->median = array[quarter_len * 2];
-	frame->three_quarters = array[quarter_len * 3];
+	frame->qu = array[quarter_len];
+	frame->med = array[quarter_len * 2];
+	frame->three_qu = array[quarter_len * 3];
 	free(array);
 }
 

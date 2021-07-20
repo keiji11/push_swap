@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:48:40 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/18 17:30:07 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/20 10:36:40 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ typedef struct s_frame
 	int				print_stacks;
 	int				do_write;
 	int				stack_len;
-	long			quarter;
-	long			median;
-	long			three_quarters;
+	long			qu;
+	long			med;
+	long			three_qu;
 
 	long			biggest;
 	int				big_rotate;
@@ -97,9 +97,7 @@ void				reset_moves(t_frame *frame);
 void				solve_5_or_less(t_frame *frame);
 void				solver(t_frame *frame);
 int					sorted(t_frame *frame);
-void				switching(t_frame *frame, t_stack *stack_a, int split);
-void				equal_stack(t_stack *stack_a, t_stack *stack_a_end,
-						int flag);
+int					equal_stack(t_stack *stack_a, t_stack *stack_a_end);
 /*
 ** shared functions
 */
