@@ -6,7 +6,7 @@
 #    By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/02 15:46:24 by llucente          #+#    #+#              #
-#    Updated: 2021/07/18 17:30:36 by llucente         ###   ########.fr        #
+#    Updated: 2021/07/23 17:19:17 by llucente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,13 +122,13 @@ do_libft:
 				cp $(LIBFT)/$(LIBFT_A) .
 
 clean:			
-				/bin/rm -rf $(OBJ_DIR) $(LIBFT)
+				/bin/rm -rf $(OBJ_DIR) $(LIBFT_A)
 				make -C $(LIBFT) clean
 				echo "Cleaned libft object files"
 
 fclean:			clean
-				/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT)
-				make -C $(LIBFT) fclean
+				/bin/rm -f $(PUSH_SWAP) $(CHECKER) $(LIBFT_A)
+				make -C $(LIBFT)
 				echo "Cleaned $(NAME)"
 
 re: 			fclean all

@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:53:27 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/18 17:24:38 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:40:11 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	if_stack_2_a(t_frame *frame, t_stack *stack)
 {
 	int	flag;
 
+	flag = 0;
 	if (!stack || stack == frame->a->prev)
 		flag = 1;
 	return (flag);
@@ -46,6 +47,7 @@ int	if_stack_2_b(t_frame *frame, t_stack *stack)
 {
 	int	flag;
 
+	flag = 0;
 	if (!stack || stack == frame->b->prev)
 		flag = 1;
 	return (flag);

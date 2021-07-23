@@ -6,7 +6,7 @@
 /*   By: llucente <llucente@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:53:13 by llucente          #+#    #+#             */
-/*   Updated: 2021/07/02 15:53:14 by llucente         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:30:18 by llucente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ t_frame	*create_frame(t_frame *frame, char **argv)
 	frame->print_stacks = 0;
 	frame->do_write = 0;
 	frame->stack_len = 0;
-	frame->quarter = 0;
-	frame->median = 0;
-	frame->three_quarters = 0;
+	frame->qu = 0;
+	frame->med = 0;
+	frame->three_qu = 0;
 	frame->biggest = 0;
 	frame->big_rotate = 0;
 	frame->big_rrotate = 0;
